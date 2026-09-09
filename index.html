@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Godbless Technologies | Digital Solutions</title>
+
+  <meta name="description" content="Godbless Technologies provides professional digital, technology, graphic design and web solutions.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f9fc;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid #e7eaf0;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #111827;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #374151;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 7%;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(37,99,235,0.15), transparent 30%),
+        radial-gradient(circle at 15% 80%, rgba(99,102,241,0.12), transparent 25%),
+        #ffffff;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #eff6ff;
+      color: #2563eb;
+      padding: 9px 16px;
+      border-radius: 50px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 7vw, 82px);
+      line-height: 1.02;
+      margin-bottom: 25px;
+      color: #111827;
+    }
+
+    .hero h1 span {
+      color: #2563eb;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      color: #5b6473;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 25px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .primary {
+      background: #2563eb;
+      color: white;
+    }
+
+    .primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(37,99,235,0.25);
+    }
+
+    .secondary {
+      border: 2px solid #dbe1ea;
+      color: #172033;
+      background: white;
+    }
+
+    .secondary:hover {
+      border-color: #2563eb;
+      color: #2563eb;
+    }
+
+    /* GENERAL */
+    section {
+      padding: 90px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 700px;
+      margin: auto auto 55px;
+    }
+
+    .section-title h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+      color: #111827;
+    }
+
+    .section-title p {
+      color: #687386;
+      font-size: 18px;
+    }
+
+    /* ABOUT */
+    .about {
+      background: #111827;
+      color: white;
+    }
+
+    .about-container {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      color: #cbd5e1;
+      font-size: 17px;
+    }
+
+    .about-box {
+      border: 1px solid #374151;
+      border-radius: 20px;
+      padding: 35px;
+      background: #1f2937;
+    }
+
+    .about-box h3 {
+      margin-bottom: 15px;
+      color: #93c5fd;
+    }
+
+    /* SERVICES */
+    .services-grid {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service {
+      background: white;
+      padding: 32px;
+      border-radius: 18px;
+      border: 1px solid #e5e9f0;
+      transition: 0.3s;
+    }
+
+    .service:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 18px 40px rgba(15,23,42,0.08);
+      border-color: #bfdbfe;
+    }
+
+    .service-icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eff6ff;
+      font-size: 27px;
+      margin-bottom: 20px;
+    }
+
+    .service h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .service p {
+      color: #697386;
+    }
+
+    /* WHY US */
+    .why {
+      background: #eef4ff;
+    }
+
+    .why-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .why-card {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .why-card strong {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .why-card p {
+      color: #6b7280;
+    }
+
+    /* CONTACT */
+    .contact-container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 50px;
+      border-radius: 22px;
+      border: 1px solid #e5e7eb;
+      text-align: center;
+    }
+
+    .contact-container h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .contact-container p {
+      color: #687386;
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+
+    .contact-details {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .contact-item {
+      padding: 15px 20px;
+      background: #f4f7fb;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0b1120;
+      color: white;
+      text-align: center;
+      padding: 35px 7%;
+    }
+
+    footer p {
+      color: #9ca3af;
+    }
+
+    .footer-logo {
+      font-size: 25px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .footer-logo span {
+      color: #60a5fa;
+    }
+
+    /* MOBILE */
+    @media (max-width: 850px) {
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 25px 7%;
+        gap: 20px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      nav {
+        padding: 16px 5%;
+      }
+
+      .hero {
+        padding: 70px 5%;
+        min-height: 80vh;
+      }
+
+      section {
+        padding: 70px 5%;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .services-grid,
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title h2,
+      .about h2,
+      .contact-container h2 {
+        font-size: 32px;
+      }
+
+      .contact-container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#home" class="logo">GODBLESS<span> TECHNOLOGIES</span></a>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+
+      <div class="badge">Digital Solutions • Technology • Creativity</div>
+
+      <h1>
+        Building the <span>Digital Future</span> With You.
+      </h1>
+
+      <p>
+        Godbless Technologies provides reliable and creative digital solutions
+        designed to help individuals, businesses and organizations grow,
+        connect and succeed in the modern digital world.
+      </p>
+
+      <div class="buttons">
+        <a href="#services" class="btn primary">Explore Our Services</a>
+        <a href="#contact" class="btn secondary">Get In Touch</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+
+    <div class="about-container">
+
+      <div>
+        <h2>Technology With Purpose.</h2>
+
+        <p>
+          Godbless Technologies is a modern technology and digital solutions
+          brand focused on delivering practical, professional and affordable
+          services.
+        </p>
+
+        <br>
+
+        <p>
+          From websites and graphic design to digital support and technology
+          solutions, our goal is simple: help you turn your ideas into
+          something real.
+        </p>
+      </div>
+
+      <div class="about-box">
+        <h3>Our Vision</h3>
+
+        <p>
+          To become a trusted technology brand providing innovative digital
+          solutions across Africa and beyond.
+        </p>
+
+        <br>
+
+        <h3>Our Mission</h3>
+
+        <p>
+          To use technology, creativity and innovation to solve problems,
+          empower people and help businesses grow.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SERVICES -->
+  <section id="services">
+
+    <div class="section-title">
+      <h2>Our Services</h2>
+
+      <p>
+        Professional digital services designed to bring your ideas,
+        business and brand to life.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service">
+        <div class="service-icon">🌐</div>
+        <h3>Website Design</h3>
+        <p>
+          Modern, responsive and professional websites for businesses,
+          organizations and personal brands.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">🎨</div>
+        <h3>Graphic Design</h3>
+        <p>
+          Professional logos, flyers, posters, business cards, social media
+          designs and complete brand identities.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">💻</div>
+        <h3>IT Solutions</h3>
+        <p>
+          Practical technology support and digital solutions for individuals,
+          businesses and organizations.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">📱</div>
+        <h3>Digital Services</h3>
+        <p>
+          Digital support, online services and technology solutions that make
+          everyday work easier.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">📣</div>
+        <h3>Digital Marketing</h3>
+        <p>
+          Creative digital strategies to help businesses improve their online
+          presence and reach more customers.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">⚙️</div>
+        <h3>Technology Consulting</h3>
+        <p>
+          Guidance and technology recommendations to help you choose and use
+          the right digital tools.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WHY US -->
+  <section class="why" id="why">
+
+    <div class="section-title">
+      <h2>Why Choose Godbless Technologies?</h2>
+
+      <p>
+        We combine technology, creativity and reliability to deliver
+        solutions that make a difference.
+      </p>
+    </div>
+
+    <div class="why-grid">
+
+      <div class="why-card">
+        <strong>Professional</strong>
+        <p>We take every project seriously.</p>
+      </div>
+
+      <div class="why-card">
+        <strong>Creative</strong>
+        <p>We turn ideas into impressive results.</p>
+      </div>
+
+      <div class="why-card">
+        <strong>Reliable</strong>
+        <p>We focus on quality and dependable service.</p>
+      </div>
+
+      <div class="why-card">
+        <strong>Affordable</strong>
+        <p>Professional solutions at practical prices.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact">
+
+    <div class="contact-container">
+
+      <h2>Let's Work Together</h2>
+
+      <p>
+        Have an idea, business or project you want to take digital?
+        Contact Godbless Technologies today.
+      </p>
+
+      <div class="contact-details">
+
+        <div class="contact-item">
+          📍 The Gambia
+        </div>
+
+        <div class="contact-item">
+          📱 WhatsApp: +220 387 7866
+        </div>
+
+      </div>
+
+      <div class="buttons" style="justify-content:center;">
+
+        <a
+          href="https://wa.me/2203877866"
+          class="btn primary"
+          target="_blank">
+          Chat on WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-logo">
+      GODBLESS<span> TECHNOLOGIES</span>
+    </div>
+
+    <p>
+      Digital Solutions • Technology • Creativity
+    </p>
+
+    <br>
+
+    <p>
+      © 2026 Godbless Technologies. All Rights Reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- MENU SCRIPT -->
+  <script>
+
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("active");
+      });
+    });
+
+  </script>
+
+</body>
+</html>
