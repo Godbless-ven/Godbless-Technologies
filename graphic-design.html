@@ -96,11 +96,34 @@
     </p>
 
     <!-- YOUR GRAPHIC IMAGE -->
-    <img 
-        src="60C0BB58-398C-4835-AE87-7B5726682DC1.png" 
-        alt="Graphic Design Services"
-        class="design-image"
-    >
+ <div class="gallery">
+
+    <div class="gallery-item">
+        <img src="60C0BB58-398C-4835-AE87-7B5726682DC1.png" alt="Graphic Design">
+    </div>
+
+</div>
+    <.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.gallery-item {
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
 
     <div class="services">
         <h2>Our Graphic Design Services</h2>
